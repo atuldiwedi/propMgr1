@@ -11,9 +11,14 @@ const Properties = () => {
     <>
       <PropertyForm />
       <PropertiesContainer>
-        {prop.map((property) => (
-          <Property key={property.id} property={property} />
-        ))}
+        {prop.length > 0 ? (
+          prop.map((property) => (
+            <Property key={property.id} property={property} />
+          ))
+        ) : (
+          <h3>No property listed</h3>
+        )}
+        {}
       </PropertiesContainer>
     </>
   );
